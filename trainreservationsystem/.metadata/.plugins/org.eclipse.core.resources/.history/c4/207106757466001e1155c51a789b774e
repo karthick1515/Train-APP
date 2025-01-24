@@ -1,0 +1,12 @@
+server.port=8082
+spring.application.name=train-service
+
+
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=traindb
+
+eureka.instance.prefer-ip-address=true
+#eureka.client.fetch-registry=true
+#eureka.client.register-with-eureka=true
+#eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/  

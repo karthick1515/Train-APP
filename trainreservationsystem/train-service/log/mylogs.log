@@ -1,0 +1,24 @@
+[ERROR] 24-10-2023 12:49:55.488 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Train with train number 1123 not found
+[INFO ] 24-10-2023 12:49:55.507 pm [http-nio-8082-exec-1]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[ERROR] 25-10-2023 11:02:53.465 am [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Train with train number 12222 not found
+[INFO ] 25-10-2023 11:02:53.487 am [http-nio-8082-exec-1]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[INFO ] 25-10-2023 12:37:02.225 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Adding a new train with train number: 102938
+[INFO ] 25-10-2023 12:37:02.612 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Saving the new train with train number: 102938
+[INFO ] 25-10-2023 12:40:19.392 pm [http-nio-8082-exec-4]  com.trainservice.service.TrainServiceImpl - Updating train details for train number: 102938
+[INFO ] 25-10-2023 12:52:11.879 pm [http-nio-8082-exec-9]  com.trainservice.service.TrainServiceImpl - Deleting train with train number: 102938
+[INFO ] 25-10-2023 12:57:54.590 pm [http-nio-8082-exec-6]  com.trainservice.service.TrainServiceImpl - Adding a new train with train number: 102938
+[INFO ] 25-10-2023 12:57:54.614 pm [http-nio-8082-exec-6]  com.trainservice.service.TrainServiceImpl - Saving the new train with train number: 102938
+[INFO ] 25-10-2023 12:59:53.273 pm [http-nio-8082-exec-9]  com.trainservice.service.TrainServiceImpl - Updating seat availability for train number: 102938
+[INFO ] 25-10-2023 02:24:46.657 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Deleting train with train number: 102938
+[ERROR] 25-10-2023 02:24:51.155 pm [http-nio-8082-exec-2]  com.trainservice.service.TrainServiceImpl - Train with train number 102938 not found
+[INFO ] 25-10-2023 02:24:51.548 pm [http-nio-8082-exec-2]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[ERROR] 25-10-2023 02:33:30.817 pm [http-nio-8082-exec-4]  com.trainservice.service.TrainServiceImpl - Train with train number 102938 not found
+[INFO ] 25-10-2023 02:33:30.831 pm [http-nio-8082-exec-4]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[ERROR] 25-10-2023 02:42:39.372 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Train with train number 102938 not found
+[INFO ] 25-10-2023 02:42:39.408 pm [http-nio-8082-exec-1]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[ERROR] 25-10-2023 02:44:31.739 pm [http-nio-8082-exec-3]  com.trainservice.service.TrainServiceImpl - Train with train number 102938 not found
+[INFO ] 25-10-2023 02:44:31.750 pm [http-nio-8082-exec-3]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[ERROR] 25-10-2023 05:18:14.671 pm [http-nio-8082-exec-6]  com.trainservice.service.TrainServiceImpl - Train with train number 102938 not found
+[INFO ] 25-10-2023 05:18:14.759 pm [http-nio-8082-exec-6]  c.t.e.CustomizedResponseEntityExceptionHandler - Not Found Exception
+[INFO ] 25-10-2023 05:21:57.300 pm [http-nio-8082-exec-9]  com.trainservice.service.TrainServiceImpl - Updating seat availability for train number: 908071
+[INFO ] 25-10-2023 05:23:06.777 pm [http-nio-8082-exec-1]  com.trainservice.service.TrainServiceImpl - Updating seat availability for train number: 908071

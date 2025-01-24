@@ -1,0 +1,9 @@
+package com.trainservice.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.trainservice.model.TrainDetails;
+
+public interface TrainRepository  extends MongoRepository<TrainDetails,String>{
+
+}

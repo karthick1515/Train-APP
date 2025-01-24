@@ -1,0 +1,93 @@
+package com.trainservice.service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.trainservice.exceptions.TrainDetailsNotFoundException;
+import com.trainservice.model.TrainDetails;
+import com.trainservice.repository.TrainRepository;
+
+@Service
+public class TrainServiceImpl implements TrainService{
+	
+	@Autowired
+	TrainRepository trainRepository;
+
+	@Override
+	public TrainDetails addTrain(TrainDetails trainDetails) {
+		
+		return trainRepository.save(trainDetails);
+	}
+
+	@Override
+	public List<TrainDetails> trainBetweenStationsandDate(String sourceStation, String destinationStation,
+			Date trainDate) {
+		
+		/**
+		List<TrainDetails> trainListBetweenStationsandDate=new ArrayList<>();
+		List<TrainDetails> list = trainRepository.findAll();
+		for(TrainDetails trainDetails:list) {
+			if(trainDetails.getSourceStation().equals(trainDetails) && trainDetails.getDestinationStation().equals(destinationStation) && trainDate.equals(trainDate)) {
+				trainListBetweenStationsandDate.add(trainDetails);
+			}
+		}
+		*/
+		return trainRepository.findBySourceStationAndDestinationStationAndTrainDate(sourceStation, destinationStation, trainDate);
+				
+		
+	}
+
+	@Override
+	public List<TrainDetails> getAllTrains() {
+	
+		return trainRepository.findAll();
+	}
+
+	@Override
+	public TrainDetails updateTrainDetailsByTrainNumber(int trainNumber, TrainDetails trainDetails) throws TrainDetailsNotFoundException {
+		Optional<TrainDetails> train = trainRepository.findByTrainNumber(trainNumber);
+		if(train.isEmpty()) {
+			throw new TrainDetailsNotFoundException("Train with "+trainNumber+" does not exist!!");
+		}
+		TrainDetails trainDetailsTemp = train.get();
+		trainDetailsTemp.setTrainNumber(trainDetails.getTrainNumber());
+		trainDetailsTemp.setTrainName(trainDetails.getTrainName());
+		trainDetailsTemp.setSourceStation(trainDetails.getSourceStation());
+		trainDetailsTemp.setDestinationStation(trainDetails.getDestinationStation());
+		trainDetailsTemp.setDepartureTime(trainDetails.getDepartureTime());
+		trainDetailsTemp.setArrivalTime(trainDetails.getArrivalTime());
+		trainDetailsTemp.setTrainDate(trainDetails.getTrainDate());
+		trainDetailsTemp.setTotalSeats(trainDetails.getTotalSeats());
+		trainDetailsTemp.setAvailableSeats(trainDetails.getAvailableSeats());
+		trainDetailsTemp.setFare(trainDetails.getFare());
+		
+		return	trainRepository.save(trainDetails);
+
+	}
+
+	@Override
+	public TrainDetails findTrainById(String id) throws TrainDetailsNotFoundException {
+		
+		Optional<TrainDetails> trainDetails = trainRepository.findById(id);
+		if(trainDetails.isEmpty()) {
+			throw new TrainDetailsNotFoundException("Train with "+id+" does not exist!!");
+		}
+	    return trainDetails.get();
+		
+	}
+
+	@Override
+	public TrainDetails findTrainByTrainNumber(int trainNumber) throws TrainDetailsNotFoundException {
+		Optional<TrainDetails> train = trainRepository.findByTrainNumber(trainNumber);
+		if(train.isEmpty()) {
+			throw new TrainDetailsNotFoundException("Train with "+trainNumber+" not found!!");
+		}
+;		return null;
+	}
+
+}

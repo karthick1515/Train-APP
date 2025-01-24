@@ -1,0 +1,22 @@
+package com.trainservice.service;
+
+import java.util.Date;
+import java.util.List;
+
+import com.trainservice.model.TrainDetails;
+
+public interface TrainService {
+	
+   TrainDetails addTrain(TrainDetails trainDetails);
+   
+   List<TrainDetails> trainBetweenStationsandDate(String sourceStation,String destinationStation,Date trainDate );
+   
+   List<TrainDetails> getAllTrains();
+   
+   TrainDetails updateTrainDetailsById(int trainNumber,TrainDetails trainDetails);
+   
+   TrainDetails findTrainById(String id);
+   
+   TrainDetails findTrainByTrainNumber(int trainNumber);
+   
+}

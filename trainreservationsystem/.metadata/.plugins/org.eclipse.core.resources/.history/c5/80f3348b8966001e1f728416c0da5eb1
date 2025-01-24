@@ -1,0 +1,58 @@
+package com.trainservice.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.trainservice.exceptions.TrainDetailsNotFoundException;
+import com.trainservice.model.TrainDetails;
+import com.trainservice.service.TrainService;
+
+@RestController
+@RequestMapping("/train")
+public class TrainController {
+
+	@Autowired
+	private TrainService trainService;
+
+	@PostMapping("/addTrain")
+	ResponseEntity<TrainDetails> addTrain(@RequestBody TrainDetails trainDetails) {
+		return new ResponseEntity<TrainDetails>(trainService.addTrain(trainDetails), HttpStatus.CREATED);
+	}
+
+	@GetMapping("/getTrainBetweenStationAndDate/{sourceStation}/{destinationStation}/{trainDate}")
+	ResponseEntity<List<TrainDetails>> trainBetweenStationsandDate(@PathVariable String sourceStation,
+			@PathVariable String destinationStation, @PathVariable Date trainDate) {
+		return new ResponseEntity<List<TrainDetails>>(
+				trainService.trainBetweenStationsandDate(sourceStation, destinationStation, trainDate), HttpStatus.OK);
+	}
+    
+	@GetMapping("/getAllTrains")
+	ResponseEntity<List<TrainDetails>> getAllTrains(){
+		return new ResponseEntity<List<TrainDetails>>(trainService.getAllTrains(),HttpStatus.OK);
+	}
+    
+	@PutMapping("/updateTrain/{trainNumber}")
+	ResponseEntity<TrainDetails> updateTrainDetailsByTrainNumber(@PathVariable int trainNumber,@RequestBody TrainDetails trainDetails)throws TrainDetailsNotFoundException{
+		return new ResponseEntity<TrainDetails>(trainService.updateTrainDetailsByTrainNumber(trainNumber, trainDetails),HttpStatus.OK);
+	}
+    
+	@GetMapping("/findTrainById/{id}")
+	TrainDetails findTrainById(@PathVariable String id) throws TrainDetailsNotFoundException{
+		return new ResponseEntity<TrainDetails>(trainService.findTrainById(id),)
+	}
+
+	TrainDetails findTrainByTrainNumber(int trainNumber) throws TrainDetailsNotFoundException;
+
+}

@@ -1,0 +1,18 @@
+package com.trainservice.model;
+
+import java.time.LocalDate;
+
+public class TrainDetails {
+
+	private String id;
+	private String trainNumber;
+	private String trainName;
+	private String sourceStation;
+	private String destinationStation;
+	private LocalDate departureTime;
+	private LocalDate arrivalTime;
+	private int totalSeats;
+	private int availableSeats;
+	private double fare;
+
+}
